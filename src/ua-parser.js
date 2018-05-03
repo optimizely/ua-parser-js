@@ -918,20 +918,20 @@
     //   In AMD env the global scope should be kept clean, but jQuery is an exception.
     //   jQuery always exports to global scope, unless jQuery.noConflict(true) is used,
     //   and we should catch that.
-    var $ = window && (window.jQuery || window.Zepto);
-    if ($ && !$.ua) {
-        var parser = new UAParser();
-        $.ua = parser.getResult();
-        $.ua.get = function () {
-            return parser.getUA();
-        };
-        $.ua.set = function (uastring) {
-            parser.setUA(uastring);
-            var result = parser.getResult();
-            for (var prop in result) {
-                $.ua[prop] = result[prop];
-            }
-        };
-    }
+    //var $ = window && (window.jQuery || window.Zepto);
+    //if (typeof $ !== UNDEF_TYPE) {
+    //    var parser = new UAParser();
+    //    $.ua = parser.getResult();
+    //    $.ua.get = function () {
+    //        return parser.getUA();
+    //    };
+    //    $.ua.set = function (uastring) {
+    //        parser.setUA(uastring);
+    //        var result = parser.getResult();
+    //        for (var prop in result) {
+    //            $.ua[prop] = result[prop];
+    //        }
+    //    };
+    //}
 
 })(typeof window === 'object' ? window : this);
